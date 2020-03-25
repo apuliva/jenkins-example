@@ -1,7 +1,11 @@
 pipeline {
     
-    def readProp;
+    
     agent any
+    
+    environment {
+        
+        def readProp=readYaml file: 'environment_dev_prop.yaml'
     
     tools {
         maven 'Maven_v' 
@@ -11,7 +15,7 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                readProp = readYaml file: 'environment_dev_prop.yaml'
+                
                 echo ""${readProp['environment']}""
                 withMaven(maven : 'Maven_v') {
                     sh 'mvn clean compile'
