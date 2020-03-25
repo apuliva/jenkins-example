@@ -3,11 +3,7 @@ pipeline {
     
     agent any
     
-    environment {
-        
-        def readProp=readProperties file: 'environment_dev.properties'
-        
-    }
+    
     
     tools {
         maven 'Maven_v' 
@@ -39,8 +35,10 @@ pipeline {
 
             steps {
                 script{
-                    echo ""${readProp['environment']}""  
-                
+                    def readProp=readFile "environment_dev_prop.yaml"
+                    def environment = readYaml text: readProp
+                    println "environment =" + environment
+
                 }
             }
         }
