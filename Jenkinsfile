@@ -1,6 +1,8 @@
 pipeline {
     agent any
     
+    datas = readYaml file: 'environment_dev_prop.yaml'
+    
     tools {
         maven 'Maven_v' 
     }
@@ -11,6 +13,7 @@ pipeline {
             steps {
                 withMaven(maven : 'Maven_v') {
                     sh 'mvn clean compile'
+                    sh 'echo $environment'
                 }
             }
         }
