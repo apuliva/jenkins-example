@@ -5,7 +5,7 @@ pipeline {
     
     environment {
         
-        def readProp=readYaml file: 'environment_dev_prop.yaml'
+        def readProp=readProperties file: 'environment_dev.properties'
         
     }
     
