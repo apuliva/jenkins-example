@@ -18,8 +18,8 @@ pipeline {
 
             steps {
                 
-                def readProp1=readProperties file: 'environment_dev.properties'
-                echo "${readProp1['environment']}"
+                def env=readProp['environment']
+                echo "environment = ${env}"
                 withMaven(maven : 'Maven_v') {
                     sh 'mvn clean compile'
                     
