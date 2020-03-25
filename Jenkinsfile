@@ -39,7 +39,7 @@ pipeline {
                     def read_string = readYaml file : "environment_dev_prop.yaml"
                     //println "environment =" + environment
                     env.string_name = read_string['environment']
-                    println " env.string_name "
+                    println " ${string_name} "
                     
 
                 }
