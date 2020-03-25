@@ -1,8 +1,8 @@
 pipeline {
-    agent any
     
     def readProp;
-
+    agent any
+    
     tools {
         maven 'Maven_v' 
     }
