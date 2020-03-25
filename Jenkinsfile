@@ -39,8 +39,7 @@ pipeline {
 
             steps {
                 script{
-                   
-                echo "def env=readProp['environment']"
+                    echo ""${readProp['environment']}""  
                 
                 }
             }
