@@ -35,11 +35,11 @@ pipeline {
 
             steps {
                 script{
-                    def readProp=readFile "environment_dev_prop.yaml"
-                    def environment = readYaml text: readProp
-                    println "environment =" + environment
-                    env.ENV = readProp['environment']
-                    println " env.ENV "
+                    //def readProp=readFile "environment_dev_prop.yaml"
+                    def read_string = readYaml file : "environment_dev_prop.yaml"
+                    //println "environment =" + environment
+                    env.string_name = read_string['environment']
+                    println " env.string_name "
                     
 
                 }
