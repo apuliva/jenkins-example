@@ -18,7 +18,7 @@ pipeline {
 
             steps {
                 
-                echo "${environment}"
+                echo "${readProp['environment']}"
                 withMaven(maven : 'Maven_v') {
                     sh 'mvn clean compile'
                     
