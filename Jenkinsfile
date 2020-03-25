@@ -1,7 +1,7 @@
 pipeline {
     agent any
     
-    def read = readYaml file: 'environment_dev_prop.yaml'
+    def datas = readYaml file: 'environment_dev_prop.yaml'
     
     tools {
         maven 'Maven_v' 
