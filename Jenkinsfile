@@ -38,8 +38,12 @@ pipeline {
                     //def readProp=readFile "environment_dev_prop.yaml"
                     def read_string = readYaml file : "environment_dev_prop.yaml"
                     //println "environment =" + environment
-                    env.string_name = read_string['environment']
-                    println " ${string_name} "
+                    env.envvalue = read_string['environment']
+                    println " ${envvalue} "
+                    env.ipvalue = read_string['ip_address']
+                    println " ${ipvalue} "
+                    env.portvalue = read_string['port']
+                    println " ${portvalue} "
                     
 
                 }
